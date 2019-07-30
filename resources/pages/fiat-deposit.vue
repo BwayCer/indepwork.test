@@ -8,12 +8,16 @@
           type="is-primary"
         @click="recordSalt"
         ) 響指
-      p#text 你好
+      p#text 我好
+      p#text.button.is-primary.is-medium(
+        @click="isComponentModalActive = true"
+      ) 你好
       b-modal(
         :active.sync='isComponentModalActive',
-        has-modal-card=''
+        b-has-modal-card=''
       )
         modal-form(v-bind='formProps')
+        | 他好
 </template>
 
 <style lang="scss">
@@ -33,27 +37,26 @@
 <script>
     import Card from '~/components/Card'
 
-    // const ModalForm = {
-    //     props: ['email', 'password'],
-    //     template: `<div>{{email}}: {{password}}</div>`
-    // }
+    const ModalForm = {
+        props: ['email', 'password'],
+        template: `<div>{{email}}: {{password}}</div>`
+    }
 
     export default {
         name: 'FiatDeposit',
         components: {
-            Card
-            // Card,
-            // ModalForm
+            Card,
+            ModalForm
         },
-        // data() {
-        //     return {
-        //         isComponentModalActive: false,
-        //         formProps: {
-        //             email: 'evan@you.com',
-        //             password: 'testing'
-        //         }
-        //     }
-        // },
+        data() {
+            return {
+                isComponentModalActive: false,
+                formProps: {
+                    email: 'evan@you.com',
+                    password: 'testing'
+                }
+            }
+        },
         methods: {
             recordSalt(evt) {
                 let helInputSalt = document.querySelector('#inputSalt');
