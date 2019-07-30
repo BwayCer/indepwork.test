@@ -66,7 +66,17 @@ export default {
           title: 'Inspire',
           icon: 'lightbulb',
           to: { name: 'inspire' }
-        }
+        },
+        {
+          title: 'Bway',
+          icon: 'account-check',
+          to: { name: 'bway' }
+        },
+        {
+          title: 'FiatD',
+          icon: 'account-check',
+          to: { name: 'fiat-deposit' }
+        },
       ]
     }
   }
